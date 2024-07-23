@@ -13,8 +13,8 @@
       }
     }
   }
-}```
-
+}
+```
 2. Note ID of the discount-allocator function i.e. 799b0454-8c13-48a5-a1c7-8ed3005be93c
 
 3. Register the discount allocator 
