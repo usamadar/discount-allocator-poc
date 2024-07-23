@@ -1,0 +1,52 @@
+query RunInput {
+  discounts {
+    id
+    title
+    code
+    discountApplicationStrategy
+    discountProposals {
+      handle
+      message
+      value {
+        __typename
+        ... on FixedAmount {
+          amount
+          appliesToEachItem
+        }
+        ... on Percentage {
+          value
+        }
+      }
+      targets {
+        cartLineId
+        quantity
+      }
+    }
+  }
+  cart {
+    lines {
+      id
+      quantity
+      cost {
+        amountPerQuantity {
+          amount
+          currencyCode
+        }
+        compareAtAmountPerQuantity {
+          amount
+        }
+      }
+      merchandise {
+        __typename
+        ... on ProductVariant {
+          id
+          title
+          product {
+            id
+            title
+          }
+        }
+      }
+    }
+  }
+}
